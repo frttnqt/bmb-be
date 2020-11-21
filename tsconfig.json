@@ -1,11 +1,5 @@
 {
   "compilerOptions": {
-    "include" : [
-      "src/**/*.ts"   /* Include every ts file in source folder */
-    ],
-    "exclude" : [
-      "node_modules"  /* exclude everything in  node_modules */
-    ],
     /* Basic Options */
     // "incremental": true,                   /* Enable incremental compilation */
     "target": "es5",
@@ -73,5 +67,11 @@
     "experimentalDecorators": true
     /* Enables experimental support for ES7 decorators. */
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
-  }
+  },
+  "include" : [
+    "src/**/*.ts"   /* Include every ts file in source folder */
+  ],
+  "exclude" : [
+    "node_modules"  /* exclude everything in  node_modules */
+  ]
 }
