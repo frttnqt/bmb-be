@@ -16,6 +16,11 @@ export default class App {
 	}
 
 	private setAppConfig(): void {
+    this.app.use((req, res, next) => {
+      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+      next();
+    });
 		this.app.use(bodyParser.json());
 		this.app.use('/api/v1', routes);
 		this.app.get('/', (req, res) => {
