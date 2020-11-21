@@ -19,6 +19,7 @@ export default class App {
 		this.app.use(bodyParser.json());
 		this.app.use('/api/v1', routes);
 		this.app.get('/', (req, res) => {
+			console.log('App works');
 			res.send({ app: 'works' });
 		});
 		this.app.use(bodyParser.urlencoded({ extended: true }));
