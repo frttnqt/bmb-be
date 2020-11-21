@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import routes from './routes';
 import { keys } from './config';
+import path from 'path';
 
 export default class App {
 	public app: express.Application;
@@ -21,6 +22,7 @@ export default class App {
 			res.send({ app: 'works' });
 		});
 		this.app.use(bodyParser.urlencoded({ extended: true }));
+		this.app.use('/public', express.static(path.join(__dirname, 'public')));
 	}
 
 	private setDatabases(): void {
