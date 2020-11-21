@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import routes from './routes';
+import cors from 'cors';
 import { keys } from './config';
 import path from 'path';
 
@@ -17,12 +18,8 @@ export default class App {
 
 	private setAppConfig(): void {
 		this.app.use(bodyParser.json());
+		this.app.use(cors());
 		this.app.use('/api/v1', routes);
-		this.app.use((req, res, next) => {
-			res.header('Access-Control-Allow-Origin', '*');
-			res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-			next();
-		});
 		this.app.get('/', (req, res) => {
 			console.log('App works');
 			res.send({ app: 'works' });
