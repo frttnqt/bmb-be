@@ -10,7 +10,7 @@
     "object-curly-spacing": true,
     "ordered-imports": false,
     "no-console": false,
-    "typedef": [true, "call-signature", "arrow-call-signature"]
+    "typedef": [true, "call-signature"]
   },
   "rulesDirectory": []
 }
